@@ -4,16 +4,16 @@ from selenium.webdriver.firefox import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from django.core.urlresolvers import reverse
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from django.utils.translation import activate
 
 
 class HomeNewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         firefox_binary = FirefoxBinary(
             '/opt/homebrew-cask/Caskroom/firefox/37.0.2/Firefox.app/Contents/MacOS/firefox-bin')
-        # self.browser = webdriver.Firefox(firefox_binary=firefox_binary)
         self.browser = webdriver.WebDriver(firefox_binary=firefox_binary)
         self.browser.implicitly_wait(3)
-        # self.url = 'http://localhost:8000'
+        activate('en')
 
     def tearDown(self):
         self.browser.quit()
