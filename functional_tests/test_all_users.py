@@ -38,6 +38,16 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
         self.browser.get(self.live_server_url + '/humans.txt')
         self.assertNotIn("Not Found", self.browser.title)
 
+    def test_i18n(self):
+        for lang, h1_text in [('en', 'Welcome to TaskBuster!'),
+                              # ('zh-cn', '欢迎使用 TaskBuster!'),
+                              # ('ca', "Benvingut a TaskBuster!")
+                              ]:
+            activate(lang)
+            self.browser.get(self.get_full_url("home"))
+            h1 = self.browser.find_element_by_tag_name('h1')
+            self.assertEqual(h1.text, h1_text)
+
 
 def main():
     # unittest.main(warnings='ignore')  # avoid a ResourceWarning message
