@@ -16,3 +16,7 @@ python manage.py makemessages -l zh-cn
 # work on app/locale/lang
 python manage.py compilemessages -l zh-cn
 ```
+
+## chinese
+```
+

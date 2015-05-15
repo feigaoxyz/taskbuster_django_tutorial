@@ -5,6 +5,8 @@ from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from django.core.urlresolvers import reverse
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.utils.translation import activate
+from datetime import date
+from django.utils import formats
 
 
 class HomeNewVisitorTest(StaticLiveServerTestCase):
@@ -40,8 +42,8 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
 
     def test_i18n(self):
         for lang, h1_text in [('en', 'Welcome to TaskBuster!'),
-                              # ('zh-cn', '欢迎使用 TaskBuster!'),
-                              # ('ca', "Benvingut a TaskBuster!")
+                              ('cn', '欢迎使用 TaskBuster!'),
+                              ('ca', "Benvingut a TaskBuster!")
                               ]:
             activate(lang)
             self.browser.get(self.get_full_url("home"))
