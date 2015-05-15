@@ -3,10 +3,10 @@
 from selenium.webdriver.firefox import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from django.core.urlresolvers import reverse
-from django.contrib.staticfiles.testing import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 
-class HomeNewVisitorTest(LiveServerTestCase):
+class HomeNewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         firefox_binary = FirefoxBinary(
             '/opt/homebrew-cask/Caskroom/firefox/37.0.2/Firefox.app/Contents/MacOS/firefox-bin')
@@ -29,7 +29,7 @@ class HomeNewVisitorTest(LiveServerTestCase):
         self.browser.get(self.get_full_url("home"))
         h1 = self.browser.find_element_by_tag_name("h1")
         self.assertEqual(h1.value_of_css_property("color"),
-                         "rbga(200, 50, 255, 1)")
+                         "rgba(200, 50, 255, 1)")
 
 
 def main():
