@@ -92,10 +92,10 @@ TEMPLATE_CONTEXT_PROCESSORS += (
 )
 
 AUTHENTICATION_BACKENDS = (
-    # default backend -- used to login by username in django admin
-    'django.contrib.auth.backends.ModelBackend',
+    # Default backend -- used to login by username in Django admin
+    "django.contrib.auth.backends.ModelBackend",
     # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 INSTALLED_APPS += (
@@ -108,7 +108,7 @@ INSTALLED_APPS += (
     'allauth.socialaccount.providers.google',
 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'none'
