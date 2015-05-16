@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load l10n %}
+{% load tz %}
 
 {% block head_title %}
 TaskBuster Django Tutorial
@@ -13,7 +14,9 @@ TaskBuster Django Tutorial
 	<div class="container">
 		<h1>{% trans "Welcome to TaskBuster!" %}</h1>
 
-		<p>{% blocktrans %}TaskBuster is a simple Task manager that helps you organize your daylife. </br> You can create todo lists, periodic tasks and more! </br></br> If you want to learn how it was created, or create it yourself!, check www.django-tutorial.com {% endblocktrans %}</p>
+		<p>{% blocktrans %}TaskBuster is a simple Task manager that helps you organize your daylife. </br> You can
+			create todo lists, periodic tasks and more! </br></br> If you want to learn how it was created, or create it
+			yourself!, check www.django-tutorial.com {% endblocktrans %}</p>
 
 		<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
 	</div>
@@ -37,11 +40,11 @@ TaskBuster Django Tutorial
 			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 		</div>
 		<div class="col-md-4">
-			<h2>Heading</h2>
+			<h2>Time Zones</h2>
 
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
-				porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-				fermentum massa justo sit amet risus.</p>
+			<p>Singapore: <span id="time-tz">{{ now | time:"H:i" }}</span></p>
+			<p>UTC: <span id="time-utc">{{ now | utc | time:"H:i" }}</span></p>
+			<p>New York: <span id="time-ny">{{ now | timezone:"America/New_York" | time:"H:i" }}</span></p>
 
 			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 		</div>
