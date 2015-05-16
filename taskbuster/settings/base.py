@@ -102,7 +102,7 @@ USE_I18N = True
 
 LANGUAGES = (
     ('en', _('English')),
-    ('cn', _('Chinese (PRC)')),
+    ('zh-hans', _('Chinese (PRC)')),
     ('ca', _('Catalan')),
 )
 

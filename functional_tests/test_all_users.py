@@ -43,7 +43,7 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
 
     def test_i18n(self):
         for lang, h1_text in [('en', 'Welcome to TaskBuster!'),
-                              ('cn', '欢迎使用 TaskBuster!'),
+                              ('zh-hans', '欢迎使用 TaskBuster!'),
                               ('ca', "Benvingut a TaskBuster!")
                               ]:
             activate(lang)
@@ -53,7 +53,7 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
 
     def test_l10n(self):
         today = date.today()
-        for lang in ['en', 'ca', 'cn']:
+        for lang in ['en', 'ca', 'zh-hans']:
             activate(lang)
             self.browser.get(self.get_full_url("home"))
             local_date = self.browser.find_element_by_id("local-date")

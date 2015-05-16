@@ -11,10 +11,19 @@ coverage html
 
 ## i18n
 
+```python
+# settings.py
+LANGUAGES = (
+    ('en', _('English')),
+    ('zh-hans', _('Chinese (PRC)')),
+    ('ca', _('Catalan')),
+)
+```
+
 ```sh
-python manage.py makemessages -l cn
+python manage.py makemessages -l zh_hans
 # work on app/locale/lang
-python manage.py compilemessages -l cn
+python manage.py compilemessages -l zh_hans
 ```
 
 ## testing
