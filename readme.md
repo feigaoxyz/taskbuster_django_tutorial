@@ -32,3 +32,12 @@ python manage.py compilemessages -l zh_hans
 python manage.py test functional_tests.test_all_users.HomeNewVisitorTest.test_i18n
 python manage.py test
 ```
+
+## database
+
+```sh
+python manage.py check
+python manage.py migrate
+```
+
+
