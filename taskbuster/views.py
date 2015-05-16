@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
+import datetime
+
 from django.shortcuts import render
 
 
 def home(request):
-    return render(request, "taskbuster/index.html", {})
+    today = datetime.date.today()
+    return render(request, "taskbuster/index.html", {'today': today})
 
 
 def home_files(request, filename):

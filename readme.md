@@ -9,14 +9,17 @@ coverage report
 coverage html
 ```
 
-# i18n
+## i18n
 
 ```sh
-python manage.py makemessages -l zh-cn
+python manage.py makemessages -l cn
 # work on app/locale/lang
-python manage.py compilemessages -l zh-cn
+python manage.py compilemessages -l cn
 ```
 
-## chinese
-```
+## testing
 
+```sh
+python manage.py test functional_tests.test_all_users.HomeNewVisitorTest.test_i18n
+python manage.py test
+```
