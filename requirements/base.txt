@@ -1,4 +1,4 @@
 Django>=1.8
 pytz>=2015.4
-psycopg2>=2.6
+psycopg2-binary
 django-allauth>=0.19.1
